@@ -43,7 +43,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var DateFormat;
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
@@ -69,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           child: Padding(
                             padding: const EdgeInsets.all(8),
                             child: Text(
-                              DateFormat.yMMMd().format(message.date),
+                              DateTime.now().day.toString(),
                               style: const TextStyle(color: Colors.white),
                             ),
                           ),
