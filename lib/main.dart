@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grouped_list/grouped_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -54,13 +55,13 @@ class _MyHomePageState extends State<MyHomePage> {
               child: GroupedListView<Message, DateTime>(
                   padding: const EdgeInsets.all(8),
                   reverse: true,
-                  order: GroupListOrder.DESC,
+                  order: GroupedListOrder.DESC,
                   useStickyGroupSeparators: true,
                   floatingHeader: true,
                   elements: messages,
                   groupBy: (message) => DateTime(
                       message.date.year, message.date.month, message.date.day),
-                  groupHeaderBuilder: (Message message) => SizeBox(
+                  groupHeaderBuilder: (Message message) => SizedBox(
                       height: 40,
                       child: Center(
                         child: Card(
